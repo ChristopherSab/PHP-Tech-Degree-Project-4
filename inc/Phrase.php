@@ -2,12 +2,11 @@
 
 class Phrase 
 {
-    private $currentPhrase;
-    private $selected = [];
+    public $currentPhrase;
+    public $selected = [];
 
-    function __constructor($phrase = null, $selected = null)
+    function __construct($phrase = null, $selected = null)
     {
-
         if(!empty($phrase)){
             $this->currentPhrase = $phrase;
         }else{
@@ -17,6 +16,16 @@ class Phrase
         if(!empty($selected)){
             $this->selected = $selected;
         }
+    }
+
+    function addPhraseToDisplay(){
+        
+        $characters = str_split(strtolower($this->currentPhrase));
+
+        foreach($characters as $letter){
+            return $letter."<br>";
+        }
+
 
     }
 
