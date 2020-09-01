@@ -16,7 +16,8 @@ var_dump($game);
 
 echo '<br>';
 
-echo $phrase->addPhraseToDisplay();
+echo $phrase->addPhraseToDisplay(); 
+
 
 
 
