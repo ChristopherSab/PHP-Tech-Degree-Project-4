@@ -8,15 +8,9 @@ $phrase = new Phrase();
 $game = new Game($phrase);
 
 
-var_dump($phrase);
-
 echo '<br>';
 
-var_dump($game);
 
-echo '<br>';
-
-echo $phrase->addPhraseToDisplay(); 
 
 
 
@@ -37,10 +31,13 @@ echo $phrase->addPhraseToDisplay();
 
 	<body>
 		<div class="main-container">
-			<h2 class="header">Phrase Hunter</h2>
-            <form action="play.php">
-                <input id="btn__reset" type="submit" value="Start Game" />
-            </form>
+            <h2 class="header">Phrase Hunter</h2>
+            <?php
+                echo $phrase->addPhraseToDisplay(); 
+                echo $game->displayKeyboard();
+                var_dump($_POST);
+            ?>
+            
 		</div>
 
 	</body>

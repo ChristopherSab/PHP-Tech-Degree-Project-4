@@ -22,9 +22,23 @@ class Phrase
         
         $characters = str_split(strtolower($this->currentPhrase));
 
-        foreach($characters as $letter){
-            return $letter."<br>";
+        $html = '<div id="phrase" class="section">';
+        $html.= '<ul>';
+
+        foreach($characters as $char){
+
+            if(ctype_space($char)){
+                $html.= '<li class="hide space"></li>';
+            }
+            else{
+                $html.= '<li class="hide letter '.$char.'">'.$char.'</li>';
+            }
         }
+
+        $html.= '</ul>';
+        $html.= '</div>';
+
+        return $html;
 
 
     }
