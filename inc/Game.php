@@ -10,12 +10,12 @@ class Game
         $this->phrase = $phrase;
     }
 
+
     function displayKeyboard(){
 
         $firstRow = ['q', 'w', 'e','r','t','y','u','i','o','p'];
         $secondRow = ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l'];
         $thirdRow = ['z', 'x', 'c', 'v', 'b', 'n', 'm'];
-
 
         $html = '<form action="play.php" method="POST">';
         $html.= '<input class="text" type=text id=key name=key  value="" hidden/>';
@@ -26,7 +26,7 @@ class Game
 
         foreach($firstRow as $letter){
 
-            $html.= '<button class="key" value='.$letter.'>'.$letter.'</button>';
+            $html.= '<button class="key" name='.$letter.'>'.$letter.'</button>';
         }
 
         $html.= '</div>';
@@ -36,7 +36,7 @@ class Game
 
         foreach($secondRow as $letter){
 
-            $html.= '<button class="key" value='.$letter.'>'.$letter.'</button>';
+            $html.= '<button class="key" name='.$letter.'>'.$letter.'</button>';
         }
 
         $html.= '</div>';
@@ -46,7 +46,7 @@ class Game
 
         foreach($thirdRow as $letter){
 
-            $html.= '<button class="key" value='.$letter.'>'.$letter.'</button>';
+            $html.= '<button class="key" name='.$letter.'>'.$letter.'</button>';
         }
 
         $html.= '</div>';
@@ -57,6 +57,23 @@ class Game
 
         return $html;
          
+    }
+
+    function displayScore(){
+
+        $html = '<div id="scoreboard" class="section">
+                <ol>';
+
+        for($i=1; $i<=$this->lives; $i++){
+
+            $html.= '<li class="tries"><img src="images/liveHeart.png" height="35px" widght="30px"></li>';
+        }
+
+        $html.= '</ol>
+                </div>';
+
+        return $html;
+
     }
 
     
