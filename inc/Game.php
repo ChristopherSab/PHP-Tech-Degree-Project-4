@@ -17,6 +17,7 @@ class Game
         $secondRow = ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l'];
         $thirdRow = ['z', 'x', 'c', 'v', 'b', 'n', 'm'];
 
+        //HTML Form Begins here   
         $html = '<form action="play.php" method="POST">';
         $html.= '<input class="text" type=text id=key name=key  value="" hidden/>';
         $html.= '<div id="qwerty" class="section">';
