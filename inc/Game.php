@@ -19,7 +19,7 @@ class Game
 
         //HTML Form Begins here   
         $html = '<form action="play.php" method="POST">';
-        $html.= '<input class="text" type=text id=key name=key  value="" hidden/>';
+        $html.= '<input class="text" type=text id=key name="key" value="" hidden/>';
         $html.= '<div id="qwerty" class="section">';
 
         //FIRST Row Keyboard Letters//
@@ -27,7 +27,7 @@ class Game
 
         foreach($firstRow as $letter){
 
-            $html.= '<button class="key" name='.$letter.'>'.$letter.'</button>';
+            $html.= '<button class="key" name="key">'.$letter.'</button>';
         }
 
         $html.= '</div>';
@@ -37,7 +37,7 @@ class Game
 
         foreach($secondRow as $letter){
 
-            $html.= '<button class="key" name='.$letter.'>'.$letter.'</button>';
+            $html.= '<button class="key" name="key">'.$letter.'</button>';
         }
 
         $html.= '</div>';
@@ -47,7 +47,7 @@ class Game
 
         foreach($thirdRow as $letter){
 
-            $html.= '<button class="key" name='.$letter.'>'.$letter.'</button>';
+            $html.= '<button class="key" name="key">'.$letter.'</button>';
         }
 
         $html.= '</div>';

@@ -2,28 +2,34 @@
 
 session_start();
 
-
-
 require 'inc/Game.php';
 require 'inc/Phrase.php';
 
 $_SESSION['phrase'] = 'start small';
 
-
 if($_SERVER['REQUEST_METHOD']== 'POST'){
 
-   $_SESSION['selected'] = $_POST['name'];
-   
-   //session_destroy();
-
-}
+    $_SESSION['selected'] = $_POST['key'];
+    
+    //session_destroy();
+ 
+ }
 
 var_dump($_SESSION);
+
+
+
+
+
 
 
 $phrase = new Phrase();
 
 $game = new Game($phrase);
+
+
+
+
 
 ?>
 

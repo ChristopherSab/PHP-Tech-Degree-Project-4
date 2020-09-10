@@ -1,5 +1,6 @@
 <?php
 
+
 class Phrase 
 {
     public $currentPhrase;
