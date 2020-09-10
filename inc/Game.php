@@ -27,7 +27,7 @@ class Game
 
         foreach($firstRow as $letter){
 
-            $html.= '<button class="key" name="key">'.$letter.'</button>';
+            $html.= '<button class="key" name="key" value="'.$letter.'">'.$letter.'</button>';
         }
 
         $html.= '</div>';
@@ -37,7 +37,7 @@ class Game
 
         foreach($secondRow as $letter){
 
-            $html.= '<button class="key" name="key">'.$letter.'</button>';
+            $html.= '<button class="key" name="key" value="'.$letter.'">'.$letter.'</button>';
         }
 
         $html.= '</div>';
@@ -47,7 +47,7 @@ class Game
 
         foreach($thirdRow as $letter){
 
-            $html.= '<button class="key" name="key">'.$letter.'</button>';
+            $html.= '<button class="key" name="key" value="'.$letter.'">'.$letter.'</button>';
         }
 
         $html.= '</div>';

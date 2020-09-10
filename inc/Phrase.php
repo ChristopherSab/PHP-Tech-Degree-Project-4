@@ -41,7 +41,6 @@ class Phrase
 
         return $html;
 
-
     }
 
 }
