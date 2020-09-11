@@ -10,12 +10,13 @@ $_SESSION['phrase'] = 'start small';
 if($_SERVER['REQUEST_METHOD']== 'POST'){
 
     $_SESSION['selected'] = $_POST['key'];
+
+    
     
     //session_destroy();
  
  }
 
-var_dump($_SESSION);
 
 
 
@@ -26,6 +27,15 @@ var_dump($_SESSION);
 $phrase = new Phrase();
 
 $game = new Game($phrase);
+
+var_dump($phrase->checkLetter('b'));
+ 
+
+
+var_dump($_SESSION);
+
+
+
 
 
 

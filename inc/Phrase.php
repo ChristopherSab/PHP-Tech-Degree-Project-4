@@ -3,7 +3,7 @@
 
 class Phrase 
 {
-    public $currentPhrase;
+    public $currentPhrase ='Horse';
     public $selected = [];
 
     function __construct($phrase = null, $selected = null)
@@ -40,6 +40,20 @@ class Phrase
         $html.= '</div>';
 
         return $html;
+
+    }
+
+    function checkLetter($letter){
+
+        $characters = array_unique(str_split(str_replace( ' ', '', strtolower($this->currentPhrase))));
+
+        if(in_array($letter, $characters)){
+
+            return true;
+
+        }else{
+            return false;
+        }
 
     }
 
