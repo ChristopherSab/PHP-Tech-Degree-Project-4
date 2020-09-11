@@ -3,7 +3,7 @@
 
 class Phrase 
 {
-    public $currentPhrase ='Horse';
+    public $currentPhrase;
     public $selected = [];
 
     function __construct($phrase = null, $selected = null)

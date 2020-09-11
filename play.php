@@ -28,7 +28,7 @@ $phrase = new Phrase();
 
 $game = new Game($phrase);
 
-var_dump($phrase->checkLetter('b'));
+var_dump($phrase->checkLetter('z'));
  
 
 
