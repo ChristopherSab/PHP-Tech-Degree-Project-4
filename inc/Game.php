@@ -1,6 +1,6 @@
 <?php
 
-class Game 
+class Game
 {
 
     private $phrase;
@@ -47,7 +47,9 @@ class Game
 
         foreach($thirdRow as $letter){
 
-            $html.= '<button class="key" name="key" value="'.$letter.'">'.$letter.'</button>';
+            //$html.= '<button class="key" name="key" value="'.$letter.'">'.$letter.'</button>';
+
+            $html.= $this->letterHandler($letter);
         }
 
         $html.= '</div>';
@@ -77,5 +79,27 @@ class Game
 
     }
 
+
+    function letterHandler($letter){
+
+        if(!in_array($letter, $this->phrase->selected)){
+
+            return '<button class="key" name="key" value="'.$letter.'">'.$letter.'</button>';
+
+        }else{
+
+            if($phrase->checkLetter($letter)){
+
+                return '<button class="key correct" name="key" value="'.$letter.'">'.$letter.'</button>';
+
+            }else{
+
+                return '<button class="key incorrect" name="key" value="'.$letter.'">'.$letter.'</button>';
+
+            }
+
+        }
+
+    }
     
 }
