@@ -6,7 +6,7 @@ class Phrase
     public $currentPhrase;
     public $selected = [];
 
-    function __construct($phrase = null, $selected = null)
+    function __construct($phrase = null, $selected = [])
     {
         if(!empty($phrase)){
             $this->currentPhrase = $phrase;
@@ -52,7 +52,7 @@ class Phrase
             return true;
 
         }else{
-            
+
             return false;
         }
 

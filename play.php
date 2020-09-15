@@ -5,23 +5,21 @@ session_start();
 require 'inc/Game.php';
 require 'inc/Phrase.php';
 
+
 $_SESSION['phrase'] = 'start small';
+
+if (!isset($_SESSION["selected"])) {
+
+    $_SESSION["selected"] = [];
+    
+}
 
 if($_SERVER['REQUEST_METHOD']== 'POST'){
 
-    $_SESSION['selected'] = $_POST['key'];
-
-    
-    
+    array_push($_SESSION['selected'], $_POST["key"]);
     //session_destroy();
- 
+    
  }
-
-
-
-
-
-
 
 
 $phrase = new Phrase();
@@ -31,14 +29,7 @@ $game = new Game($phrase);
 var_dump($phrase->checkLetter('z'));
  
 
-
 var_dump($_SESSION);
-
-
-
-
-
-
 
 
 ?>

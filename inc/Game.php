@@ -88,7 +88,7 @@ class Game
 
         }else{
 
-            if($phrase->checkLetter($letter)){
+            if($this->phrase->checkLetter($letter)){
 
                 return '<button class="key correct" name="key" value="'.$letter.'">'.$letter.'</button>';
 
