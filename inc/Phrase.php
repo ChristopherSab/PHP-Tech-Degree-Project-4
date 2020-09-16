@@ -32,7 +32,13 @@ class Phrase
                 $html.= '<li class="hide space"></li>';
             }
             else{
-                $html.= '<li class="hide letter '.$char.'">'.$char.'</li>';
+                if(in_array($char, $this->selected)){
+                    $html.= '<li class="show letter '.$char.'">'.$char.'</li>';
+
+                }else{
+                    $html.= '<li class="hide letter '.$char.'">'.$char.'</li>';
+                }
+                
             }
         }
 
