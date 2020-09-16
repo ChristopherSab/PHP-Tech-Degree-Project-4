@@ -27,7 +27,8 @@ class Game
 
         foreach($firstRow as $letter){
 
-            $html.= '<button class="key" name="key" value="'.$letter.'">'.$letter.'</button>';
+            //$html.= '<button class="key" name="key" value="'.$letter.'">'.$letter.'</button>';
+            $html.= $this->letterHandler($letter);
         }
 
         $html.= '</div>';
@@ -37,7 +38,8 @@ class Game
 
         foreach($secondRow as $letter){
 
-            $html.= '<button class="key" name="key" value="'.$letter.'">'.$letter.'</button>';
+            //$html.= '<button class="key" name="key" value="'.$letter.'">'.$letter.'</button>';
+            $html.= $this->letterHandler($letter);
         }
 
         $html.= '</div>';
@@ -82,19 +84,20 @@ class Game
 
     function letterHandler($letter){
 
+
         if(!in_array($letter, $this->phrase->selected)){
 
-            return '<button class="key" name="key" value="'.$letter.'">'.$letter.'</button>';
+            return '<button class="key" type="submit" name="key" value="'.$letter.'">'.$letter.'</button>';
 
         }else{
 
             if($this->phrase->checkLetter($letter)){
 
-                return '<button class="key correct" name="key" value="'.$letter.'">'.$letter.'</button>';
+                return '<button disabled class="key correct" type="submit" name="key" value="'.$letter.'">'.$letter.'</button>';
 
             }else{
 
-                return '<button class="key incorrect" name="key" value="'.$letter.'">'.$letter.'</button>';
+                return '<button disabled class="key incorrect" type="submit" name="key" value="'.$letter.'">'.$letter.'</button>';
 
             }
 

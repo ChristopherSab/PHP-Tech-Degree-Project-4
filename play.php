@@ -22,7 +22,7 @@ if($_SERVER['REQUEST_METHOD']== 'POST'){
  }
 
 
-$phrase = new Phrase();
+$phrase = new Phrase(null, $_SESSION['selected']);
 
 $game = new Game($phrase);
 
