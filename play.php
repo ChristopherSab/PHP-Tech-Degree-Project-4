@@ -38,6 +38,8 @@ $game = new Game($phrase);
 
 $_SESSION['phrase'] = $phrase->currentPhrase;
 
+echo $phrase->numberLost();
+
 
 
 ?>
@@ -57,7 +59,7 @@ $_SESSION['phrase'] = $phrase->currentPhrase;
 	<body>
 		<div class="main-container">
             <h2 class="header">Phrase Hunter</h2>
-            
+
             <?php
                 echo $phrase->addPhraseToDisplay(); 
                 echo $game->displayKeyboard();

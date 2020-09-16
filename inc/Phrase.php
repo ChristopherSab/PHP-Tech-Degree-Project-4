@@ -73,9 +73,8 @@ class Phrase
 
     function checkLetter($letter){
 
-        $characters = array_unique(str_split(str_replace( ' ', '', strtolower($this->currentPhrase))));
 
-        if(in_array($letter, $characters)){
+        if(in_array($letter, $this->uniqueLetterArray())){
 
             return true;
 
@@ -84,6 +83,17 @@ class Phrase
             return false;
         }
 
+    }
+
+    function uniqueLetterArray(){
+  
+        return array_unique(str_split(str_replace( ' ', '', strtolower($this->currentPhrase))));
+
+    }
+
+    function numberLost(){
+
+        return count(array_diff($this->uniqueLetterArray(), $this->selected));
     }
 
 }
