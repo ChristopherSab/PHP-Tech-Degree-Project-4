@@ -41,8 +41,6 @@ $game = new Game($phrase);
 $_SESSION['phrase'] = $phrase->currentPhrase;
 
 
-var_dump($game->checkForLose());
-
 
 
 
@@ -63,7 +61,12 @@ var_dump($game->checkForLose());
 
 	<body>
 		<div class="main-container">
+            
             <h2 class="header">Phrase Hunter</h2>
+
+            <?php
+               var_dump($game->checkForWin()); 
+            ?>
 
             <?php
                 echo $phrase->addPhraseToDisplay(); 

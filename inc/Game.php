@@ -126,5 +126,28 @@ class Game
         return $this->livesLeft() < 1;
 
     }
+
+    function gameOver(){
+
+        if($this->checkForLose()){
+
+            return '<h1 id="game-over-message">The phrase was: "'.$this->phrase->currentPhrase.'". Better luck next time!</h1>';
+
+        }else {
+            return false;
+        }
+    }
+
+    function checkForWin(){
+
+        $matches = array_intersect($this->phrase->selected, $this->phrase->uniqueLetterArray());
+
+        if(count($matches) == count($this->phrase->uniqueLetterArray())){
+            return true;
+        }else{
+            return false;
+        }
+    
+    }
     
 }
