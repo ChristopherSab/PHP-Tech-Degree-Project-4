@@ -38,7 +38,10 @@ $game = new Game($phrase);
 
 $_SESSION['phrase'] = $phrase->currentPhrase;
 
-echo $phrase->numberLost();
+
+
+echo $game->wrongGuesses();
+
 
 
 

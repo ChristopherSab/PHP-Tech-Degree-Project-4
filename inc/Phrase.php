@@ -88,12 +88,8 @@ class Phrase
     function uniqueLetterArray(){
   
         return array_unique(str_split(str_replace( ' ', '', strtolower($this->currentPhrase))));
-
     }
 
-    function numberLost(){
 
-        return count(array_diff($this->uniqueLetterArray(), $this->selected));
-    }
 
 }

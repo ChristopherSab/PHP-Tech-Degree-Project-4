@@ -69,7 +69,7 @@ class Game
         $html = '<div id="scoreboard" class="section">
                 <ol>';
 
-        for($i=1; $i<=$this->lives; $i++){
+        for($i=1; $i<=$this->livesLeft(); $i++){
 
             $html.= '<li class="tries"><img src="images/liveHeart.png" height="35px" widght="30px"></li>';
         }
@@ -102,6 +102,21 @@ class Game
             }
 
         }
+
+    }
+
+    function wrongGuesses(){
+
+        $result = array_diff($this->phrase->selected, $this->phrase->uniqueLetterArray());
+        return count($result);
+
+    }
+
+ 
+
+    function livesLeft(){
+
+        return $this->lives - $this->wrongGuesses();
 
     }
     
