@@ -1,9 +1,10 @@
 <?php
 
-session_start();
-
 require 'inc/Game.php';
 require 'inc/Phrase.php';
+
+session_start();
+
 
 if (isset($_POST['start'])) {
     unset($_SESSION['selected']);
@@ -19,19 +20,21 @@ if (!isset($_SESSION["selected"])) {
 
 if($_SERVER['REQUEST_METHOD']== 'POST'){
 
+    if(isset($_POST["key"])){
+
     array_push($_SESSION['selected'], $_POST["key"]);
-    //session_destroy();
+
+    $phrase = new Phrase($_SESSION['phrase'], $_SESSION['selected']);
+
+
+    }  
     
  }
 
 
  if(!isset($_SESSION['phrase'])){
 
-    $phrase = new Phrase(null, $_SESSION['selected']);
-
-    }else{
-
-    $phrase = new Phrase($_SESSION['phrase'], $_SESSION['selected']);
+    $phrase = new Phrase();
 }
 
 $game = new Game($phrase);
