@@ -26,7 +26,6 @@ if($_SERVER['REQUEST_METHOD']== 'POST'){
 
     $phrase = new Phrase($_SESSION['phrase'], $_SESSION['selected']);
 
-
     }  
     
  }
@@ -42,8 +41,8 @@ $game = new Game($phrase);
 $_SESSION['phrase'] = $phrase->currentPhrase;
 
 
+var_dump($game->checkForLose());
 
-echo $game->wrongGuesses();
 
 
 

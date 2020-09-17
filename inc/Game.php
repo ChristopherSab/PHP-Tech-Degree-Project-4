@@ -119,5 +119,12 @@ class Game
         return $this->lives - $this->wrongGuesses();
 
     }
+
+
+    function checkForLose(){
+
+        return $this->livesLeft() < 1;
+
+    }
     
 }
