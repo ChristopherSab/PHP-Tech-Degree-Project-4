@@ -131,16 +131,17 @@ class Game
 
         if($this->checkForLose()){
    
-            $html = '<h1 id="game-over-message">The phrase was: "'.$this->phrase->currentPhrase.'". Better luck next time!</h1>';
+            $html = '<h1 id = "game-over-message">The phrase was: "'.$this->phrase->currentPhrase.'". Better luck next time!</h1>';
             $html.= '<script> document.body.style.backgroundColor = "#f5785f"; </script>';
-
+            $html.= '<script> document.getElementsByClassName("header")[0].style.color = "white"; </script>';
 
             return $html;
 
         }elseif($this->checkForWin()){
 
-            $html = '<h1 id="game-over-message">Congratulations on guessing: "'.$this->phrase->currentPhrase.'"</h1>';
+            $html = '<h1 id = "game-over-message">Congratulations on guessing: "'.$this->phrase->currentPhrase.'"</h1>';
             $html.= '<script> document.body.style.backgroundColor = "#78CF82"; </script>';
+            $html.= '<script> document.getElementsByClassName("header")[0].style.color = "white"; </script>';
 
             return $html;
         }

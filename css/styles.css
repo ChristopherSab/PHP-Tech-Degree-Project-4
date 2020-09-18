@@ -95,6 +95,10 @@ button, input[type=submit] {
   color: #3a3f58;
 }
 
+#game-over-message {
+  color: white;
+}
+
 /* Phrase */
 
 .letter {
