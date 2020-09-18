@@ -27,7 +27,6 @@ class Game
 
         foreach($firstRow as $letter){
 
-            //$html.= '<button class="key" name="key" value="'.$letter.'">'.$letter.'</button>';
             $html.= $this->letterHandler($letter);
         }
 
@@ -38,7 +37,6 @@ class Game
 
         foreach($secondRow as $letter){
 
-            //$html.= '<button class="key" name="key" value="'.$letter.'">'.$letter.'</button>';
             $html.= $this->letterHandler($letter);
         }
 
@@ -48,8 +46,6 @@ class Game
         $html.= '<div class="keyrow">';
 
         foreach($thirdRow as $letter){
-
-            //$html.= '<button class="key" name="key" value="'.$letter.'">'.$letter.'</button>';
 
             $html.= $this->letterHandler($letter);
         }
@@ -64,6 +60,7 @@ class Game
          
     }
 
+    //This will loop through the number of lives left to display the game score number as "Blue Hearts"
     function displayScore(){
 
         $html = '<div id="scoreboard" class="section">
@@ -78,12 +75,10 @@ class Game
                 </div>';
 
         return $html;
-
     }
 
 
     function letterHandler($letter){
-
 
         if(!in_array($letter, $this->phrase->selected)){
 
@@ -112,19 +107,12 @@ class Game
 
     }
 
- 
-
     function livesLeft(){
-
         return $this->lives - $this->wrongGuesses();
-
     }
 
-
     function checkForLose(){
-
         return $this->livesLeft() < 1;
-
     }
 
     function gameOver(){
@@ -168,7 +156,6 @@ class Game
         $html = '<form action="play.php" method="post">';
         $html.= '<input  id="btn__reset" type="submit" name="start" value="Play Again" />';
         $html.= '</form>';
-
         return $html;
     }
     

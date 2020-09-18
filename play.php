@@ -5,17 +5,17 @@ require 'inc/Phrase.php';
 
 session_start();
 
-
+//When the START key is submitted it resets the Session Variables;
 if (isset($_POST['start'])) {
+
     unset($_SESSION['selected']);
     unset($_SESSION['phrase']);
-  }
+}
 
 
 if (!isset($_SESSION["selected"])) {
 
-    $_SESSION["selected"] = [];
-    
+    $_SESSION["selected"] = []; 
 }
 
 if($_SERVER['REQUEST_METHOD']== 'POST'){
@@ -39,10 +39,6 @@ if($_SERVER['REQUEST_METHOD']== 'POST'){
 $game = new Game($phrase);
 
 $_SESSION['phrase'] = $phrase->currentPhrase;
-
-
-
-
 
 
 ?>

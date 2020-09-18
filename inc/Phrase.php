@@ -73,7 +73,6 @@ class Phrase
 
     function checkLetter($letter){
 
-
         if(in_array($letter, $this->uniqueLetterArray())){
 
             return true;
@@ -85,11 +84,10 @@ class Phrase
 
     }
 
+    //This function returns an Array of non-duplicate letters from the Current Hidden Phrase
     function uniqueLetterArray(){
   
         return array_unique(str_split(str_replace( ' ', '', strtolower($this->currentPhrase))));
     }
-
-
 
 }
