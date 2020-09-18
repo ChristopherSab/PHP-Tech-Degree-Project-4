@@ -65,13 +65,20 @@ $_SESSION['phrase'] = $phrase->currentPhrase;
             <h2 class="header">Phrase Hunter</h2>
 
             <?php
-               var_dump($game->checkForWin()); 
-            ?>
 
-            <?php
+            if(!$game->gameOver()){
+
                 echo $phrase->addPhraseToDisplay(); 
                 echo $game->displayKeyboard();
                 echo $game->displayScore();
+
+            }else{
+
+                echo $game->gameOver();
+                echo $game->restartGame();
+
+            } 
+               
             ?>
             
 		</div>

@@ -130,10 +130,19 @@ class Game
     function gameOver(){
 
         if($this->checkForLose()){
+   
+            $html = '<h1 id="game-over-message">The phrase was: "'.$this->phrase->currentPhrase.'". Better luck next time!</h1>';
 
-            return '<h1 id="game-over-message">The phrase was: "'.$this->phrase->currentPhrase.'". Better luck next time!</h1>';
+            return $html;
 
-        }else {
+        }elseif($this->checkForWin()){
+
+            $html = '<h1 id="game-over-message">Congratulations on guessing: "'.$this->phrase->currentPhrase.'"</h1>';
+
+            return $html;
+        }
+        
+        else {
             return false;
         }
     }
@@ -148,6 +157,15 @@ class Game
             return false;
         }
     
+    }
+
+    function restartGame(){
+
+        $html = '<form action="play.php" method="post">';
+        $html.= '<input  id="btn__reset" type="submit" name="start" value="Play Again" />';
+        $html.= '</form>';
+
+        return $html;
     }
     
 }

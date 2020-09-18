@@ -95,7 +95,6 @@ button, input[type=submit] {
   color: #3a3f58;
 }
 
-
 /* Phrase */
 
 .letter {
@@ -170,7 +169,7 @@ button, input[type=submit] {
 
 /* Overlay */
 
-#overlay {
+.overlay {
   display: flex;
   flex-direction: column;
   position: fixed;
