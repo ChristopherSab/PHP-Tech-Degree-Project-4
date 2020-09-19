@@ -70,19 +70,13 @@ class Phrase
         return $html;
 
     }
+    
 
     function checkLetter($letter){
 
-        if(in_array($letter, $this->uniqueLetterArray())){
-
-            return true;
-
-        }else{
-
-            return false;
-        }
-
+        return in_array($letter, $this->uniqueLetterArray());
     }
+
 
     //This function returns an Array of non-duplicate letters from the Current Hidden Phrase
     function uniqueLetterArray(){
